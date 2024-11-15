@@ -1,0 +1,13 @@
+Create package :- npm init
+
+Framework of nodejs(Express)
+install express:- npm install express (npm i express)
+
+Not to start file again and again
+install nodemon:- npm install nodemon (npm i -g nodemon)
+
+file start garnaw lai :- npm start
+
+JSON (javascript object notation )
+1. Data store 
+2. Tyo store vako data lai transfer  garnea
