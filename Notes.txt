@@ -10,4 +10,4 @@ file start garnaw lai :- npm start
 
 JSON (javascript object notation )
 1. Data store 
-2. Tyo store vako data lai transfer  garnea
+2. Tyo store vako data lai transfer  garnean

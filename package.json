@@ -4,12 +4,13 @@
   "description": "learn mern",
   "main": "app.js",
   "scripts": {
-    "start":"nodemon app.js"
+    "start": "nodemon app.js"
   },
   "author": "krishna Bahadur Thapa",
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.1",
+    "mongoose": "^8.8.1",
     "nodemon": "^3.1.7"
   }
 }
