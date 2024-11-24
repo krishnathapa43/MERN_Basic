@@ -11,3 +11,9 @@ file start garnaw lai :- npm start
 JSON (javascript object notation )
 1. Data store 
 2. Tyo store vako data lai transfer  garnean
+
+
+for post request
+body>raw>JSON
+
+app.use(express.urlencoded({extended : true}))
