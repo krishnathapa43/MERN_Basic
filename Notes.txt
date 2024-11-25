@@ -27,10 +27,17 @@ CRUD Operation
 5. Delete -> FindbyId and Delete
 
 REST API
-Get book --> /GetAllbooks
-Delete book --> /delete/:id - delete
-update book --> /update/:id - patch
-Single book --> /single/:id
+Get book    --> /GetAllbooks - get
+Delete book --> /delete/:id  - delete
+update book --> /update/:id  - patch
+Single book --> /single/:id  - get
+Get Author info --> /author/1 
 
 RESTFUL API
+Get book    --> /books     -get
+Delete book --> /books/:id - delete
+update book --> /books/:id - patch
+Single book --> /books/:id - get
+Add book    --> /books     - Post
+Get Author info --> /books/comment/1
 
