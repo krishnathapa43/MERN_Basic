@@ -17,3 +17,12 @@ for post request
 body>raw>JSON
 
 app.use(express.urlencoded({extended : true}))
+
+
+CRUD Operation
+1. Create 
+2. Read -> Single -> findBYId() = Return in object
+3. Read -> All -> find()  = Return in array
+4. Update -> FindById and Update()
+5. Delete -> FindbyId and Delete
+

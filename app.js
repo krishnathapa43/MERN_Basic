@@ -19,6 +19,7 @@ app.get("/",(req,res)=>{
     })
 })
 
+//CRUD operation (Book management System) 
 //Create book a API , create table book and connect with mongodb
 app.post("/book",async(req,res)=>{
     const {bookName,bookPrice,isbnNumber,authorName,publishedAt,publication} = req.body
@@ -35,7 +36,7 @@ app.post("/book",async(req,res)=>{
    })
 })
 
-//Read All Book 
+//Read All Book table
 app.get("/book",async (req,res)=>{
     const books =await Book.find()   //find = return array ma garxa
     res.status(200).json({
@@ -44,16 +45,50 @@ app.get("/book",async (req,res)=>{
     })
 })
 
-//Read single Book
+//Read single Book data from table
 app.get("/book/:id",async (req,res)=>{
     const id = req.params.id
     const book =await Book.findById(id)  //findByid = return object garxa
-    console.log(book)
-    res.json({
+    if(!book){
+        res.status(404).json({
+        message : "NOthing Found"
+    })
+}else{
+    res.status(200).json({
         message : "single Book Fetched Successfully",
         date : book
     })
+}
 })
+
+//Delete operation
+app.delete("/book/:id",async(req,res)=>{
+    const id = req.params.id
+    await Book.findByIdAndDelete(id)
+    res.status(200).json({
+        message : "Book Delete Sucessfully"
+    })
+
+})
+
+//Update operation using patch
+app.patch("/book/:id",async (req,res)=>{
+    const id = req.params.id //kun book update garnea id ho yo
+    const {bookName,bookPrice,isbnNumber,authorName,publishedAt,publication} = req.body
+    await Book.findByIdAndUpdate(id,{
+        bookName : bookName ,
+        bookPrice : bookPrice,
+        isbnNumber : isbnNumber,
+        authorName : authorName,
+        publishedAt : publishedAt,
+        publication : publication
+    })
+    res.status(200).json({
+        message : "Book Updated Sucessfully"
+    })
+})
+
+
 
 
 
