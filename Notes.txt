@@ -26,3 +26,11 @@ CRUD Operation
 4. Update -> FindById and Update()
 5. Delete -> FindbyId and Delete
 
+REST API
+Get book --> /GetAllbooks
+Delete book --> /delete/:id - delete
+update book --> /update/:id - patch
+Single book --> /single/:id
+
+RESTFUL API
+
