@@ -33,6 +33,10 @@ update book --> /update/:id  - patch
 Single book --> /single/:id  - get
 Get Author info --> /author/1 
 
+route.get("/getAllBooks")
+route.get("/single/:id)"
+
+
 RESTFUL API
 Get book    --> /books     -get
 Delete book --> /books/:id - delete
@@ -41,3 +45,9 @@ Single book --> /books/:id - get
 Add book    --> /books     - Post
 Get Author info --> /books/comment/1
 
+route.route("/book/:id").patch().delete().get()
+
+
+
+Nodejs -- application / json , url-encoded
+multiparts/ form-data

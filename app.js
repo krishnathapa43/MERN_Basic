@@ -1,15 +1,23 @@
 //write compolsory in top of nodejs program
 const express = require('express')
 const app = express()
+
 const mongoose = require('mongoose');
 const connectToDatabase = require('./Database');
 const Book = require('./model/bookModel');
 
+
 app.use(express.json())
 connectToDatabase()
 
+
+//multerconfig imports
+const {multer,storage} = require("./middleware/multerConfig")
+const upload = multer({storage : storage})
+
 //Alternative
 // Const app = require ('express') ()   
+
 
 //json code
 app.get("/",(req,res)=>{
@@ -21,7 +29,9 @@ app.get("/",(req,res)=>{
 
 //CRUD operation (Book management System) 
 //Create book a API , create table book and connect with mongodb
-app.post("/book",async(req,res)=>{
+
+app.post("/book",upload.single("image"), async(req,res)=>{
+    
     const {bookName,bookPrice,isbnNumber,authorName,publishedAt,publication} = req.body
     await Book.create({
     bookName,
